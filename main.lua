@@ -43,13 +43,11 @@ function love.draw()
         states.gameStart()
         STATE.gameStart = false
         return
-    end 
-    if STATE.gameOver then
+    elseif STATE.gameOver then
         states.gameOver()
         STATE.gameOver = false
         love.load()
-    end 
-    if STATE.gamePaused then
+    elseif STATE.gamePaused then
         states.gamePaused()
         return
     end 
