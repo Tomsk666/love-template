@@ -6,9 +6,7 @@ if os.getenv("LOCAL_LUA_DEBUGGER_VSCODE") == "1" then
     require("lldebugger").start()
 end
 
---set window size (this is default size)
-view_w = 800
-view_h = 600
+--Screen properties set in conf.lua
 
 STATE = {gameStart=false, gameOver=false, gamePaused=false, gameLevelUp=false}
 
@@ -17,9 +15,6 @@ require ("src/baddy")
 
 function love.load()
     STATE.gameStart = true
-
-    love.window.setMode (view_w, view_h,{resizable=false,vsync=false})
-    love.window.setTitle("My Game by Tom Millichamp")
 
     --example of creating a baddy & adding it to a table of baddies
     baddies = {}
